@@ -1,0 +1,160 @@
+package day09;
+
+public class class09 {
+	public static void main(String[] args) {
+	//conditional statement
+	
+	/*if statement
+	int a=10;
+	if(a==10)
+	{
+		System.out.println("the number is 10");
+	}
+	// ifelse
+	int b=5;
+	if(b==4)
+	{
+		System.out.println("the num is 4");
+	}else {
+		System.out.println("the num is 5");
+	}
+	//if else ladder
+	int d=13;
+	if(d==4)
+	{
+		System.out.println("the num is 4");
+	}
+	else if (d==10){
+		System.out.println("the num is 5");
+	}
+	else {
+		System.out.println("the num is 30");
+	}
+	//switch
+	int weekday = 2;
+	switch (weekday) {
+	case 1:
+		System.out.println("sunday");
+		break;
+	case 2:
+		System.out.println("monday");
+		break;
+	case 3:
+		System.out.println("tuesday");
+		break;
+	case 4:
+		System.out.println("wedday");
+		break;
+	case 5:
+		System.out.println("thrusday");
+		break;
+	case 6:
+		System.out.println("friday");
+		break;
+	case 7:
+		System.out.println("saturday");
+		break;
+		default:
+			System.out.println("invalid");
+			break;
+	}
+	//looping statement
+	//1.for loop
+	for(int i=1;i<10;i++) {
+		System.out.println(i);
+	}
+	//2.while loop
+	int f=5;
+	while(f<=10) {
+		System.out.println(f);
+		f++;
+	}
+	//3.do while
+	int x=20;
+	do {
+		System.out.println(x);
+		x++;
+	}while(x<=30) ;
+	//4.nested for loop
+	for(int v=0;v<2;v++) {
+		for(int z=0;z<2;z++) {
+			
+		
+			System.out.println("("+v+";"+z+")");
+		}
+	}
+	/*jumping statement
+	//1.break-example is in the switch statement
+	//2.continue statement.
+	for(int s=10;s<=20;s++) {
+		if(s%2==0) 
+			
+		
+		
+		continue;//skips this iteration
+		System.out.println(s);
+	}
+	// Types of String
+		 //Literal String & Immutable
+		 String s1 = "java";
+		 System.out.println(s1);
+		 System.out.println(System.identityHashCode(s1));
+		 String s2 = "java";
+		 System.out.println(s2);
+		 System.out.println(System.identityHashCode(s2));
+		 System.out.println(s1.concat(s2));
+		 System.out.println(System.identityHashCode(s1.concat(s2)));
+		 
+		 // Non-Literal String
+		 String s3 = new String ("java");
+		 System.out.println(s3);
+		 System.out.println(System.identityHashCode(s3));
+		 String s4 = new String ("java");
+		 System.out.println(s4);
+		 System.out.println(System.identityHashCode(s4));
+		 
+		 // Mutable String
+		 StringBuffer s5 = new StringBuffer ("java");
+		 System.out.println(s5);
+		 System.out.println(System.identityHashCode(s5));
+		 StringBuffer s6 = new StringBuffer ("java");
+		 System.out.println(s6);
+		 System.out.println(System.identityHashCode(s6));
+		 System.out.println(s5.append(s6));
+		 System.out.println(System.identityHashCode(s5.append(s6)));
+		 
+		 // Empty
+		 String s7 ="";
+		 System.out.println(s7);
+		 
+		 //Null
+		 String s8 = null;
+		 System.out.println(s8);*/
+		 
+		//even num upto 50
+		for(int i=1;i<=50;i++){
+			if(i%2!=0)
+			continue;
+			System.out.println(i);
+		}
+		//divisible by  5 upto 100
+		for(int j=0;j<=100;j++) {
+			if(j%5==0)
+				
+			System.out.println(j);
+				
+		}
+		//compare 3 digits which higher
+		int a=2;
+		int b=3;
+		int c=4;
+		int d;
+		d = c > (a>b ? a:b) ? c:((a>b) ? a:b); 
+		System.out.println("the largest number is:"+d);
+		
+	}
+	
+	
+		
+	
+}
