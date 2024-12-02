@@ -1,0 +1,102 @@
+package task_day09;
+
+public class task09 {
+	public static void main(String[] args) {
+		//1.print the length of the string
+		String msg="Guvi Geek";
+		System.out.println(msg.length());
+		
+		
+		//2.check if a num  is prime or not
+		int a= 7;
+		if(a%2==0) {
+			System.out.println("the num is not prime number");
+		}else{
+			System.out.println("the num is a prime number");
+			
+		}
+		
+		
+		//3.to find even  number
+		int b=10;
+		if(b%2==0) {
+			System.out.println("the number is even");
+		}
+		else {
+			System.out.println("the num is odd");
+		}
+		
+		
+		//4.to write "welcome to guvi" ten times.
+		for(int j=1;j<=10;j++) {
+			System.out.println("Welcome To Guvi");
+			
+		}
+		//5.check whether the person is senior citizen or not
+		int age = 60;
+		if (age>50) {
+			System.out.println("The person is senior citizen");
+			}else {
+				System.out.println("The person is not senior citizen");
+			}
+		
+		
+		//6.the sum of m and n is greator than o and p
+		int m=10,n=20,o=30,p=40;
+		int q=m+n;
+		//System.out.println(q);
+		int r=o+p;
+		//System.out.println(r);
+		if(q<r) {
+			System.out.println("the sum of m and n is lesser than o and p");
+		}
+			else{
+				
+				System.out.println("the sum m and n is greator than o and p");
+			}
+		
+		
+		//7.print from A to Z
+		char c;
+
+	    for(c = 'A'; c <= 'Z'; ++c) {
+	      System.out.print(c + " ");
+	    }
+	    
+	    
+	    //8.swapping numbers
+	    float first = 1.20f;
+	    float second = 2.45f;
+        System.out.println("First number Before swap = " + first);
+        System.out.println("Second number Before swap = " + second);
+        float temporary = first;
+        first = second;
+        second = temporary;
+        System.out.println("After swap the first number is: "+ first);
+        System.out.println("Before swap the second number is: "+ second);
+        
+        
+        //9.factorial of the given number
+        int num = 5, i = 1;
+        long factorial = 1;
+        while(i <= num)
+        {
+            factorial *= i;
+            i++;
+        }
+        System.out.printf("Factorial of %d = %d", num, factorial);
+        
+        
+        //10.count number of digits in a number
+        int v=23456;
+        int count =0;
+        while(v!=0) {
+        	v=v/10;
+        	++count;
+        }
+        System.out.println(count);
+        }
+		
+}
+
+
