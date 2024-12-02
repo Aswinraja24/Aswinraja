@@ -1,0 +1,55 @@
+package javaselenium;
+
+public class day08 {
+	public static void main(String[] args) {
+		int a=10;
+		System.out.println(a);
+	
+
+/*Primitive Datatypes byte a = 59;
+short b = 3457;  
+int c = 86348309;
+long d = 734925437923553l;
+float e = 46383.5732937f; 
+double f = 4269825462.457629535; 
+char g = 'G'; 
+boolean h = false; */
+//Non-Primitive Datatypes String s = "Class";
+short [] br = new short [4]; 
+br[0]=10; 
+br[1]=20; 
+br[2]=30; 
+br[3]=40; 
+System.out.println("Value of 3rd is " + br[2]);
+//Normal For Loop - This is Index Based 
+for (int i = 0; i < br.length; i++)
+{ 
+  System.out.println("Printing All value of Short Array: " + br[i]);
+}
+//Enhanced For Loop
+for(short t : br)
+{ 
+System.out.println("Printing All value of Short Array through Enhanced For Loop: " + t);
+ }
+int [] ar = {10,20,30,500,60,70,45,34};
+int len = ar.length;
+System.out.println("Length of the Int Array is " + len);
+System.out.println("value of the Int Array 5th is " + ar[4]);
+//Normal For Loop - In Reverse Order
+for (int i = ar.length-1; i >= 0 ; i--) 
+{
+ System.out.println("Int Array Values through Normal For Loop: " + ar[i]);
+}
+//Enhanced For Loop 
+for (int i : ar)
+{
+System.out.println("Int Array values through Enhanced For Loop: " + i); 
+}
+
+
+
+
+	}
+}
+
+
