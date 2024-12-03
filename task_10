@@ -1,0 +1,155 @@
+package task_day10;
+
+import java.util.Scanner;
+
+public class task10 {
+//1.Palindrome
+	public static void main(String[] args) {
+	/*String str = "RADAR";
+	String reversedStr = new StringBuilder(str).reverse().toString();
+	if (str.equals(reversedStr)) {
+		System.out.println("the string is palindrome");
+	}else {
+		System.out.println("the string is not palindrome");
+	}
+	
+//2.reverse string
+		  Scanner scanner = new Scanner(System.in);
+		  System.out.print("Enter a string: ");
+	        String userInput = scanner.nextLine();
+	        String reversedString = "";
+	        for (int i = userInput.length() - 1; i >= 0; i--) {
+	            reversedString += userInput.charAt(i);
+	        }
+	          System.out.println("Reversed string: " + reversedString);
+	         scanner.close();*/
+	
+// 3.Printing pattern
+	       /*  public static void printPattern(int n) {
+	             int currentNumber = 1;  
+
+	             
+	             for (int i = 1; i <= n; i++) {
+	                 
+	                 for (int j = 1; j <= i; j++) {
+	                     System.out.print(currentNumber + " ");  
+	                     currentNumber++;  
+	                 }
+	                 System.out.println();  
+	             }
+	         }
+	         
+	         public static void main(String[] args) {
+	             
+	             Scanner scanner = new Scanner(System.in);
+
+	            
+	             System.out.print("Enter the number of rows: ");
+	             int n = scanner.nextInt();
+
+	            
+	             printPattern(n);
+
+	             
+	             scanner.close();
+	         }
+	
+//4. Pattern printing
+	    public static void printPattern(int n) {
+	        // Loop through each row
+	        for (int i = 1; i <= n; i++) {
+	            if (i == 3) {
+	                // Print a single star in the middle row
+	                System.out.println("*");
+	            } else {
+	                // Print two stars with a space between them for other rows
+	                System.out.println("* *");
+	            }
+	        }
+	    }
+
+	    public static void main(String[] args) {
+	        // Create a scanner object to read user input
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Read the number of rows (n) from user input
+	        System.out.print("Enter the number of rows: ");
+	        int n = scanner.nextInt();
+
+	        // Call the function to print the pattern
+	        printPattern(n);
+
+	        // Close the scanner to avoid resource leaks
+	        scanner.close();
+	    }*/
+	//5.Anna university grading system
+	
+	/*Scanner scanner = new Scanner(System.in);
+
+    
+    System.out.print("Enter marks: ");
+    int marks = scanner.nextInt();
+
+    
+    if (marks > 100) {
+        System.out.println("Invalid Input");
+    } else {
+        
+        if (marks >= 90) {
+            System.out.println("A");
+        } else if (marks >= 80) {
+            System.out.println("B");
+        } else if (marks >= 70) {
+            System.out.println("C");
+        } else if (marks >= 60) {
+            System.out.println("D");
+        } else if (marks >= 50) {
+            System.out.println("E");
+        } else {
+            System.out.println("F");
+        }
+    }
+
+   
+    scanner.close();*/
+	
+		//largest of three number
+		/*int a=2;
+		int b=3;
+		int c=4;
+		int d;
+		d = c > (a>b ? a:b) ? c:((a>b) ? a:b); 
+		System.out.println("the largest number is:"+d);*/
+		
+// TOTAL TARRIF
+        Scanner scanner = new Scanner(System.in);
+        int month = scanner.nextInt();  
+        float roomRentPerDay = scanner.nextFloat();  
+        int daysStayed = scanner.nextInt(); 
+        float totalTariff;
+        switch (month) {
+            case 4:
+            case 5:
+            case 6:
+            case 11:
+            case 12:
+              
+                totalTariff = roomRentPerDay * 1.20f * daysStayed;
+                break;
+            default:
+                totalTariff = roomRentPerDay * daysStayed;
+        }
+        System.out.printf("%.2f\n", totalTariff);
+        scanner.close();
+    }
+
+		
+}
+
+	
+	     
+	
+    
+    
+
+	
