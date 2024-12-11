@@ -1,0 +1,151 @@
+//In java Create a class Account class with all necessary parameters as data member. Create two constructors (no argument, and two arguments) and methods to withdraw and deposit balance & check balance.
+/*package task_day_11
+public class Account {
+	    private String accountHolder;
+	    private String accountNumber;
+	    private double balance;
+	    public Account() {
+	        System.out.println("constructor with no  arguments");
+	    }
+	    public Account(String accountHolder, String accountNumber) {
+	        this.accountHolder = accountHolder;
+	        this.accountNumber = accountNumber;
+	        this.balance = 0.0;
+	    }
+	    public void deposit(double amount) {
+	    	//double amount;
+	        if (amount > 0) {
+	            balance += amount;
+	            System.out.println("Deposited: " + amount);
+	        } else {
+	            System.out.println("Deposit amount must be positive.");
+	        }
+	    }
+	    public void withdraw(double amount) {
+	        if (amount > 0 && amount <= balance) {
+	            balance = amount;
+	            System.out.println("Withdrawn: " + amount);
+	        } else {
+	            System.out.println("Insufficient balance or invalid amount.");
+	        }
+	    }
+	    public double checkBalance() {
+	        return balance;
+	    }
+	    public void displayAccountDetails() {
+	        System.out.println("Account Holder: " + accountHolder);
+	        System.out.println("Account Number: " + accountNumber);
+	        System.out.println("Current Balance: " + balance);
+	    }
+	    public static void main(String[] args) {
+	        Account account1 = new Account();
+	        account1.displayAccountDetails();
+	        account1.deposit(10000);
+	        account1.withdraw(2500);
+	        System.out.println("Balance after transactions: " + account1.checkBalance());
+	        System.out.println();
+	        Account account2 = new Account("Akash", "6767676767");
+	        account2.displayAccountDetails();
+	        account2.deposit(1000);
+	        account2.withdraw(150);
+	        System.out.println("Balance after transactions: " + account2.checkBalance());
+	    }
+	
+
+}*/
+//Create a class circle with radius as data member. Create two constructors (no argument, and two arguments) and a method to calculate Circumference.
+/*
+package task_day_11;
+public class circle {
+    public double radius;
+    public circle() {
+        
+    }
+    public circle(double radius) {
+        this.radius = radius;
+    }
+    public double calculateCircumference() {
+        return 2 * 3.14 * radius;     }
+    public static void main(String[] args) {
+        circle circle2 = new circle(7.5);
+        System.out.println("Circumference of circle2: " + circle2.calculateCircumference());
+    }
+}
+
+*/
+//Create a class called "Person" with attributes "name" and "age". Also create a constructor and getter methods for the attributes.
+/*
+package task_day_11;
+
+// question 1
+
+public class person {
+	int age;
+	String name;
+	public person() {
+		age = 10;
+		name = "aswin";
+	}
+		    public static void main(String[] args) {
+			person obj = new person();
+			System.out.println(obj.age);
+			System.out.println(obj.name);
+		
+		
+	}
+	
+
+}
+//create an implementation for a java class named Employee that represents an employee with attributes including ID, name, and salary. The class includes a method called raiseSalary(percent), which updates the salary by a specified percentage
+/*
+package task_day_11;
+
+public class Employee {
+	private String name;
+	private String id;
+	public int salary;
+	public Employee (String id, String name, int salary) {
+		this.id = id;
+		this.name  = name;
+		this.salary = salary;
+		
+	}
+	public void EmployeeDetailsBeforeSalaryRaise() {
+		System.out.println("Employee ID: " + id);
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Salary: " + salary);
+	}
+	public void SalaryRaising(double percent) {
+		if (percent > 0) {
+            salary += salary * percent / 100; 
+            System.out.println("Salary increased by " + percent + "%.");
+        }
+		else 
+		{
+            System.out.println("Invalid percentage. Salary increase must be positive.");
+        }
+		
+	}
+	  public void EmployeeDetailsAfterIncreament() {
+	        System.out.println("Employee ID: " + id);
+	        System.out.println("Employee Name: " + name);
+	        System.out.println("Employee Salary: " + salary);
+	    }
+	  public static void main(String[] args) {
+		  Employee employee = new Employee("123", "John Doe", 50000);
+	        System.out.println("Before Salary Increase:");
+	        employee.EmployeeDetailsBeforeSalaryRaise();
+	        employee.SalaryRaising(10);
+	        System.out.println("\nAfter Salary Increase:");
+	        employee.EmployeeDetailsAfterIncreament();
+	    }
+	}
+
+
+
+*/
+
+	
+
+
+*/
