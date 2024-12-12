@@ -1,0 +1,168 @@
+package abstractionA;
+
+public abstract class absA {
+	//Abstract Class
+		 public void empolyee() {
+			 System.out.println("Non-Abstract Method Body");  // Non-Abstract/Concrete Method
+		 }
+		 
+		 public abstract void customer(); // Abstract Method
+		 
+		 public abstract void admin(); // Abstract Method
+
+	}
+====================================================================
+  package abstractionA;
+
+public abstract class absA2 {
+	//Abstract Class
+		 public void empolyee() {
+			 System.out.println("Non-Abstract Method Body");  // Non-Abstract/Concrete Method
+		 }
+		 
+		 public abstract void customer(); // Abstract Method
+		 
+		 public abstract void admin(); // Abstract Method
+
+	}
+=========================================================================
+  package abstractionA;
+
+public class absB extends absA{
+	public void customer () {
+		 System.out.println("1.Abstract Method Body - Customer");  
+	 }
+	public void admin () {
+		 System.out.println("1.Abstract Method Body - Admin");  
+	 }
+}
+
+
+//Class           A           B                 C
+//Properties      A          A&B              C&B&A
+//Method        Emp,Cus,Ad  Emp,1.Cus,1.Ad  Emp,2.Cus,2.Ad
+
+
+===============================================================================
+  package abstractionA;
+
+public class absB2 extends absA{
+	public void customer () {
+		 System.out.println("1.Abstract Method Body - Customer");  
+	 }
+	public void admin () {
+		 System.out.println("1.Abstract Method Body - Admin");  
+	 }
+}
+
+
+//Class           A           B                 C
+//Properties      A          A&B              C&B&A
+//Method        Emp,Cus,Ad  Emp,1.Cus,1.Ad  Emp,2.Cus,2.Ad
+
+
+================================================================================
+  package abstractionA;
+
+public class absB3 extends absA{
+	public void customer () {
+		 System.out.println("1.Abstract Method Body - Customer");  
+	 }
+	public void admin () {
+		 System.out.println("1.Abstract Method Body - Admin");  
+	 }
+}
+
+
+//Class           A           B                 C
+//Properties      A          A&B              C&B&A
+//Method        Emp,Cus,Ad  Emp,1.Cus,1.Ad  Emp,2.Cus,2.Ad
+
+
+=====================================================================================
+  package abstractionA;
+
+public class absC  extends absB  {
+	public void customer () {
+		 System.out.println("2.Abstract Method Body - Customer");  
+	 }
+	public void admin () {
+		 System.out.println("2.Abstract Method Body - Admin");  
+	 }
+	public static void main(String[] args) {
+		absC obj = new absC ();
+		obj.customer();
+		obj.admin();
+		obj.empolyee();
+		absB obj1 = new absB ();
+		obj1.customer();
+		obj1.admin();
+		obj1.empolyee();
+		
+	}
+}
+
+//Class           A           B                 C
+//Properties      A          A&B              C&B&A
+//Method        Emp,Cus,Ad  Emp,1.Cus,1.Ad  Emp,2.Cus,2.Ad
+
+
+===============================================================================================
+  package inter;
+
+public class hybrid {
+
+		public void hybrid () {
+			System.out.println("Hybrid Method");
+		}
+
+	}
+
+
+==============================================================================================
+  package inter;
+
+public interface interfaceA {
+	public abstract void customer(); // Abstract Method
+	 
+	 public abstract void admin(); // Abstract Method
+
+}
+==============================================================================================
+  package inter;
+
+public interface interfaceB {
+ public abstract void manager(); // Abstract Method
+	 
+	 public abstract void client(); // Abstract Method
+
+}
+===================================================================================================
+  package inter;
+
+public class interfaceC extends hybrid implements interfaceA, interfaceB {
+	public void customer () {
+		System.out.println("Customer Method");
+	}
+    public void admin () {
+    	System.out.println("Admin Method");
+	}
+    public void manager () {
+		System.out.println("Manager Method");
+	}
+    public void client () {
+    	System.out.println("Client Method");
+	}
+    
+    public static void main(String[] args) {
+    	interfaceC obj = new interfaceC ();
+    	obj.customer();
+    	obj.admin();
+    	obj.manager();
+    	obj.client();
+    	obj.hybrid();
+	}
+}
+
+// Class A --->  Class C  <----- Class B
+===========================================================================================================
