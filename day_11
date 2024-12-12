@@ -1,0 +1,184 @@
+package day_11;
+
+public class classA {
+	public void employee () {
+		System.out.println("Parent Class Employee Method");
+	}
+}
+
+==========================================================
+  package day_11;
+
+public class classB extends classA{
+	public void customer () {
+		System.out.println("Child Class Customer Method");
+	}
+	
+	public static void main(String[] args) {	
+		// Single Inheritance
+		classB obj1 = new classB ();
+		obj1.employee();
+		obj1.customer();
+	}
+
+}
+===============================================================
+  package day_11;
+
+
+	public class classC extends classB {
+		public void admin () {
+			System.out.println("Sub-Child Class Method Method");
+		}
+		
+		public static void main(String[] args) {	
+			// Multilevel Inheritance
+			classC obj = new classC ();
+			obj.employee();
+			obj.customer();
+			obj.admin();
+			
+		}
+	}
+===================================================================
+  package day_11;
+
+	public class classD extends classA {
+		public void manager () {
+			System.out.println("Child Class manager Method");
+		}
+		
+		public static void main(String[] args) {	
+			// Hierachical Inheritance
+			classD obj = new classD ();
+			obj.employee();
+			obj.manager();
+			
+		}
+
+	}
+=====================================================================
+  package day11_encapslulation;
+
+public class encapA {
+	private int age;
+	private String name;
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}
+===============================================================================
+  package day11_encapslulation;
+	public class encapB extends encapA {
+		public static void main(String[] args) {
+			encapB obj = new encapB ();
+			obj.setName("RAM");
+			obj.setAge(32);
+			System.out.println("Name :" + obj.getName());
+			System.out.println("Age :" + obj.getAge());
+			
+		}
+
+	}
+==================================================================================
+  package metoverload;
+
+public class MethodOverLoading {
+	// Compile-Time Polymorphism (Method Overloading/Static Polymorphism)
+		// 1. Arguments depends on datatype
+		public void method (String s) {
+			System.out.println("Method with String Argument :" +s);
+		}
+		public void method (int a) {
+			System.out.println("Method with Int Argument :" +a);
+		}
+		// 2. Arguments depends on datatype Count
+	    public void method (int a, String s) {
+		    System.out.println("Method with Int & String Argument :"+a+s);
+		}
+		public void method (int a, String s, char ch) {
+			System.out.println("Method with Int, String & Char Argument :" + a + s + ch);
+		}
+		// 3. Arguments depends on datatype Order
+		public void method (char ch, String s) {
+			System.out.println("Method with Char & String Argument :"+ch+s);
+		}
+		public void method (String s, char ch) {
+			System.out.println("Method with String & Char Argument :" + s + ch);
+		}
+		
+		public static void main(String[] args) {
+			MethodOverLoading obj = new MethodOverLoading ();
+			obj.method(10);
+			obj.method("Java");
+			obj.method(20,"Java");
+			obj.method(30,"Java",'A');
+			obj.method('B',"Java");
+			obj.method("JAVA",'B');
+		}
+	}
+	/*
+	Same Class
+	Same Method Name
+	Different Argument
+
+	Arguments depends on datatype
+	Arguments depends on datatype Count
+	Arguments depends on datatype Order
+	*/
+===============================================================================
+  package metoverride;
+
+public class MethodOverridingA {
+	public void savings () {
+		int a = 6;
+		System.out.println("Savings Account Interest Rate :"+a);
+	}
+	public void fd () {
+		int a = 8;
+		System.out.println("FD Account Interest Rate :"+a);
+	}
+
+}
+===================================================================================
+  package metoverride;
+
+public class MethodOverridingB extends MethodOverridingA {
+	//Runtime Polymorphism (Method Overriding/Dynamic Polymorphism)
+	public void savings () {
+		float a = 3.5f;
+		System.out.println("Overrided Savings Account Interest Rate :"+a);
+	}
+	public void fd () {
+		super.fd(); // To get the parent method functions
+		System.out.println("Overriding FD Method");
+	}
+		
+	public static void main(String[] args) {
+		MethodOverridingB obj = new MethodOverridingB ();	
+		obj.savings();
+		obj.fd();
+	}
+}
+/*
+Different Class
+Same Method Name
+Same Argument
+*/
+
+
+
+		
+	
+
+
