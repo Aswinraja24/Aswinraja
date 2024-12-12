@@ -1,0 +1,218 @@
+package Collections;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ListClass {
+	public static void main(String[] args) {
+		/* List Allow Duplicates. 
+		 * List is Index Based One
+		 * List maintains insertion order 
+		 * ArrayList insertion and deletion is difficult, Searching is easy
+		 * LinkedList insertion and deletion is easy, Searching is difficult */
+		 List<String> listOne = new ArrayList<String>();
+		
+		// Add the value in the list
+		listOne.add("Car");
+		listOne.add("Lorry");
+		listOne.add("JCB");
+		listOne.add("Car");
+		listOne.add("Van");
+		
+		// To Print whole list
+		System.out.println(listOne);
+		// To get the value based on Index
+		System.out.println(listOne.get(2));
+		// To get the size 
+		System.out.println(listOne.size());
+		// To find the index of the Value
+		System.out.println(listOne.indexOf("Car"));
+		// To find the last index of value
+		System.out.println(listOne.lastIndexOf("Car"));
+		// To replace at particular index
+		listOne.set(3,"Bus");
+		System.out.println(listOne);
+		// To insert at particular index
+		listOne.add(2,"Bike");
+		System.out.println(listOne);
+		// Check whether the value is present
+		System.out.println(listOne.contains("Bus"));
+		// To remove a particular Value based on Index
+		listOne.remove(0);
+		System.out.println(listOne);
+		// To remove a particular value
+		listOne.remove("JCB");
+		System.out.println(listOne);
+		// Can add null Value
+		listOne.add(null);
+		System.out.println(listOne);
+		
+		
+		List listTwo = new ArrayList();
+		listTwo.add(10);
+		listTwo.add(20);
+		listTwo.add(30);
+		listTwo.add(40);
+		listTwo.add(50);
+		System.out.println(listTwo);
+		
+		// Adding ListOne into List Two
+		listTwo.addAll(listOne);
+		System.out.println(listTwo);
+		System.out.println(listOne);
+		
+		// Print All the Values 
+		
+		// Normal For Loop
+		for (int i = 0; i < listTwo.size(); i++) {
+			System.out.println(listTwo.get(i));	
+		}
+		
+		// Enhanced For Loop
+		for (Object object : listTwo) {
+			System.out.println(object);
+		}
+		
+		// It will retain Only the Common Values
+		listOne.retainAll(listTwo);
+		System.out.println(listOne);
+		
+		// Remove Whole List
+		listTwo.removeAll(listOne);
+		System.out.println(listTwo);
+		
+		// To Clear the List
+		listOne.clear();
+		System.out.println(listOne);
+		
+		
+		//LinkedList
+		LinkedList <String> listThree = new LinkedList<String>();
+		listThree.add("One");
+		listThree.add("Two");
+		listThree.add("Three");
+		listThree.add("Four");
+		System.out.println(listThree);
+		
+		// Adding as 1st Value
+		listThree.addFirst("Zero");
+		System.out.println(listThree);
+		
+		// Adding as last Value
+		listThree.addLast("Five");
+		System.out.println(listThree);
+		
+		// Remove 1st Value
+		listThree.poll();
+		System.out.println(listThree);
+		
+		// Remove last Value
+		listThree.pollLast();
+		System.out.println(listThree);
+		
+		// Remove 1st Value
+		listThree.remove();
+		System.out.println(listThree);
+		
+		// Remove last Value
+		listThree.removeLast();
+		System.out.println(listThree);
+
+		
+// List is Non-Synchronized
+// Synchronized - If you add a value while reading the list it will add the Value
+		
+		
+	}
+
+}
+=================================================================================================
+package Collections;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetClass {
+	/*
+	 * Set doesn't allow duplicates
+	 * Value Based one
+	 * Normal For loop Can't be used
+	 * 
+	 * Hashset - Random Order
+	 * LinkedHashset - Insertion Order
+	 * TreeSet - Ascending Order
+	 */
+	
+	public static void main(String[] args) {
+		Set <Integer> set1 = new HashSet <Integer>();
+		set1.add(10);
+		set1.add(20);
+		set1.add(30);
+		set1.add(40);
+		set1.add(40);
+		
+		System.out.println(set1);
+		//To get size of the set
+		System.out.println(set1.size());
+		
+		Set <Integer> set2 = new LinkedHashSet <Integer>();
+		set2.add(100);
+		set2.add(200);
+		set2.add(300);
+		set2.add(400);
+		System.out.println(set2);
+		
+		Set <Integer> set3 = new TreeSet <Integer>();
+		set3.add(444);
+		set3.add(265);
+		set3.add(897);
+		set3.add(197);
+		System.out.println(set3);
+		
+		//Enhanced For Loop
+		for (Integer integer : set3) {
+			System.out.println(integer);
+		}
+		
+		//Remove a value from the set
+		set3.remove(444);
+		System.out.println(set3);
+		
+		//Check the Value present or not
+		System.out.println(set3.contains(197));
+		
+		//Check whether the set is empty or not
+		System.out.println(set3.isEmpty());
+		
+		List<Integer> listTwo = new ArrayList<Integer>();
+		listTwo.add(11);
+		listTwo.add(22);
+		listTwo.add(33);
+		listTwo.add(44);
+		listTwo.add(55);
+		System.out.println(listTwo);
+		
+		// Can add list and Set
+		listTwo.addAll(set2);
+		System.out.println(listTwo);
+		
+		// It will retain Only the Common Values
+		set2.retainAll(listTwo);
+		System.out.println(set2);
+		
+		// Can add list and Set
+		set1.addAll(set2);
+		System.out.println(set1);
+		
+		// Remove the set from one set
+		set2.removeAll(set1);
+		System.out.println(set2);
+		
+		
+	}
+	
+
+}
