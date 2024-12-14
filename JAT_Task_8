@@ -1,0 +1,98 @@
+package FileOperations;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import FileOperation.Cell;
+import FileOperation.Row;
+import FileOperation.Sheet;
+import FileOperation.Workbook;
+import FileOperation.XSSFWorkbook;
+
+public class Foperations {
+	public static void main(String[] args) {
+		
+	/*1. Create a new Excel workbook.
+
+2. Create a new sheet with the name "Sheet1".
+
+3. Write the following data to the sheet:
+
+Column headers: Name, Age, Email.
+
+Row 1: John Doe, 30, john@test.com.
+
+Row 2: Jane Doe, 28, john@test.com.
+
+Row 3: Bob Smith, 35, jacky@example.com.
+
+Row 4: Swapnil, 37, swapnil@example.com.*/
+
+	File file = new File ("C:\\Users\\Om Prakash\\eclipse-workspace\\Day16_\\Excel\\TestData.xlsx");
+	FileInputStream filein = new FileInputStream (file);
+	Workbook WB = new XSSFWorkbook(filein);
+	Sheet createSheet = w.createSheet("Sheet1");
+	Row r1= createSheet.createRow(0);
+	Cell c1 = row.createCell(0);
+	cell.setCellValue("Name");
+	Cell c1 = row.createCell(1);
+	cell.setCellValue("Age");
+	Cell c1 = row.createCell(2);
+	cell.setCellValue("Email");
+	Row r2= createSheet.createRow(1);
+	Cell c2 = row.createCell(0);
+	cell.setCellValue("John Doe");
+	Cell c2 = row.createCell(1);
+	cell.setCellValue("30");
+	Cell c2 = row.createCell(2);
+	cell.setCellValue("john@test.com");
+	Row r3= createSheet.createRow(2);
+	Cell c2 = row.createCell(0);
+	cell.setCellValue("Jane Doe");
+	Cell c2 = row.createCell(1);
+	cell.setCellValue("28");
+	Cell c2 = row.createCell(2);
+	cell.setCellValue("john@test.com");
+	Row r4= createSheet.createRow(3);
+	Cell c2 = row.createCell(0);
+	cell.setCellValue("Bob smith");
+	Cell c2 = row.createCell(1);
+	cell.setCellValue("35");
+	Cell c2 = row.createCell(2);
+	cell.setCellValue("jacky@example.com");
+	Row r5= createSheet.createRow(4);
+	Cell c2 = row.createCell(0);
+	cell.setCellValue("Swapnil");
+	Cell c2 = row.createCell(1);
+	cell.setCellValue("37");
+	Cell c2 = row.createCell(2);
+	cell.setCellValue("Swapnil@example.com");
+	
+	//5. Write a Java program to read data from an Excel file using Apache POI library and print it in the console.
+	
+	File file = new File ("C:\\Users\\Om Prakash\\eclipse-workspace\\Day16_\\Excel\\TestData.xlsx");
+	FileInputStream filein = new FileInputStream (file);
+	Workbook WB = new XSSFWorkbook(filein);
+	Sheet s = w.getSheet("Sheet1");
+	Row r4= s.getRow(0);
+	Cell c2 = r.getCell(1);
+	cell.getCellValue();
+	FileOutputStream fileout = new FileOutputStream(file);
+	w.write(fileout);
+	
+	//Write a Java program to write data to an Excel file using Apache POI library.
+	File file = new File ("C:\\Users\\Om Prakash\\eclipse-workspace\\Day16_\\Excel\\TestData.xlsx");
+	FileInputStream filein = new FileInputStream (file);
+	Workbook WB = new XSSFWorkbook(filein);
+	Sheet s = w.getSheet("Sheet1");
+	Row r3= s.getRow(1);
+	Cell c1 = r.getCell(1);
+	c1.setCellValue("50");
+	FileOutputStream fileout = new FileOutputStream(file);
+	w.write(fileout);
+	
+	
+	}
+}
+	
