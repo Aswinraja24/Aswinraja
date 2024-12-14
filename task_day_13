@@ -1,0 +1,71 @@
+package exception;
+
+public class typesException {
+	//arithmetic exception
+	public static void main(String[] args) throws InterruptedException {
+		
+	
+	int a=-10;
+	int b=-12;
+	int c = b*0;
+	try {
+	int d =a/c;
+	System.out.println(d);
+	}
+	catch(Exception e){
+		System.out.println("the exception type is" +e);
+	}
+	finally {
+		System.out.println("the exceptional is handled");
+	}
+
+	//null pointer exception 
+	String d="aswin";
+	System.out.println(d);
+	String g=null;
+	try {
+		System.out.println(g.length());
+		
+	}catch(Exception e) {
+		System.out.println("the exception type is" +e);
+	}finally {
+		System.out.println("the exception handled");
+	}
+	//ArrayIndexOutOfBoundsException
+	int a1[]=new int[2];
+	a1[0]=1;
+	a1[1]=2;
+	System.out.println(a1[1]);
+	
+	try {
+		a1[2]=3;
+		System.out.println(a1[2]);
+	}catch(Exception e) {
+		System.out.println("the type o exception"+e);
+	}finally{
+		System.out.println("the exception handled");
+	}
+	//NumberFormatException
+	String str = "aksh";
+	String str1 = "465";
+	try {
+		int F = Integer.parseInt(str); 
+		System.out.println(F);
+	} catch (NumberFormatException e) {
+		System.out.println("Exception Type: "+e);
+	}
+	/* Checked Exception - InterruptedException - 
+	     unchecked is a runtime exception ,it wont show the error but while running the code it shows the exception 
+	     . But checked exception is a compile time error it show the error while writing the code then we need to import the exception in the code its self.*/
+	Thread.sleep(1000); 
+
+	
+	// throw keyword - Custom Exception,using throw keyword  we can create our own exception without using try and catch block
+	int year =2024;
+	if(year<2025) {
+		throw new IllegalArgumentException ("Age is Not Valid. Not less than 18");
+	}else {
+	    System.out.println("Age is Valid");
+	}
+	}
+}
