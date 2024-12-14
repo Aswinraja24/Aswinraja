@@ -1,0 +1,141 @@
+package Exceptional_handaling_task;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import javax.imageio.IIOException;
+
+public class EH_task {
+	/* 1.Write a Java program that reads user input for two integers and performs division.
+	Handle the exception that is thrown when the second number is zero, and display an error message to the user.*/
+     public static void main(String[] args) throws FileNotFoundException  {
+		
+	
+	 int a=12;
+	 int b=0;
+	 try 
+	 {
+	  int c=a/b;
+	 }
+	 catch(Exception e)
+	 {
+	    System.out.println("the exception is " +e);
+     }
+	 finally 
+	 {     
+	    System.out.println("Exception Handling is Used if there is any");
+	 }
+	 
+	 // 2.Write the code of ArrayIndexOutOfBoundsException&
+	 int a1[] = new int [4];
+	 a1[0]=1;
+	 a1[1]=2;
+	 a1[2]=3;
+	 a1[3]=4;
+	 try
+	 {
+		 a1[4]=5;
+		 System.out.println("index not  found");
+	 }catch(Exception e) {
+		 System.out.println("exception type is "+ e);
+	 }
+	 
+	 //Write the code of StringIndexOutOfBoundsException
+	 String str = "aswin";
+	 try {
+		 String str1=str.substring(1,6); 
+	 }catch(Exception e) {
+		 System.out.println("the exception type is " +e);
+	 }
+	 
+	 //3.Write a Java program to create an ArrayList of strings and then remove all the elements from the ArrayList
+	 ArrayList<String> L1 = new ArrayList<String>();  
+	 L1.add("one");
+	 L1.add("two");
+	 L1.add("three");
+	 L1.add("four");
+	 L1.add("five");
+	 System.out.println("the created list values are:" +L1);
+	 L1.removeAll(L1);
+	 System.out.println("after removing all the elements L1"+L1);
+	 
+	 	 
+	 //4.Write a Java program to create a TreeMap of employee IDs and names. Then, print out the names of all the employees in alphabetical order.
+	 
+	 Map <String , Integer> empinfo = new TreeMap <String , Integer> ();
+	 empinfo.put("Akash",001);
+	 empinfo.put("Aswath",002);
+	 empinfo.put("Amal",003);
+	 empinfo.put("Arnav",004);
+	 empinfo.put("Baskar",005);
+	 empinfo.put("Mani",006);
+		
+		System.out.println(empinfo);
+		
+		/*5.Implement exception handling in a Java program that reads data from a file. 
+		     If the file does not exist, throw a "FileNotFoundException" and display an error message to the user.
+		File file = new File("C:\\Users\\Tommy\\eclipse-workspace\\Task_num_07\\sample");
+		FileInputStream filein = new FileInputStream (file);//here it is showing a checked exception then using throws filenotfoundException is selected*/
+		
+		//6.program to convert List to Array
+		
+		List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+        String[] array = list.toArray(new String[0]);
+        System.out.println("Array elements:");
+        for (String element : array) {
+            System.out.print(element);
+        }
+        
+     }
+     
+}
+=============================================================================================================================================================
+
+package exception;
+
+public class InvalidAgeException  extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public InvalidAgeException() {
+        super("Default error message for MyCheckedException");
+    }
+
+    // Constructor with a custom message
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+
+    // Constructor with a custom message and cause
+    public InvalidAgeException(String message, Throwable cause) {
+        super(message,cause);
+    }
+    public class Main {
+        public static void main(String[] args) {
+        	int age =18;
+            try {
+            	if(age<18)
+                throw new InvalidAgeException("This is a custom checked exception!");
+            } catch (InvalidAgeException e) {
+                System.out.println("Caught: " + e.getMessage());
+            }
+
+}
+    }
+}
+
+
+	
+
+
