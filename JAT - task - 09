@@ -1,0 +1,58 @@
+package jattask09;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+
+
+public class tsk09 {
+	public static void main(String[] args) throws InterruptedException {
+		
+		// question number 1:
+		/*WebDriver drv1 =new FirefoxDriver();
+		 drv1.get("https://www.google.com/");
+		 drv1.manage().window().maximize();
+		 String url1 = drv1.getCurrentUrl();
+		 System.out.println("The url of the page is:"+url1);
+		 Thread.sleep(6000);
+		 drv1.navigate().refresh();
+		 Thread.sleep(10000);
+		 drv1.close(); */
+		 
+		 // question number 2;
+		/* WebDriver drv1 =new ChromeDriver();
+		 drv1.get("https://www.demoblaze.com/");
+		 drv1.manage().window().maximize();
+		 String url1 = drv1.getCurrentUrl();
+		 System.out.println(url1);
+		 String url2 ="https://www.demoblaze.com/";
+		 if(url1==url2){
+			 System.out.println("Page landed on correct website");
+		 }else {
+			 System.out.println("Page not landed on correct website");
+		 }
+		String title1= drv1.getTitle();
+		System.out.println("The Title of the Website is:" +title1);
+	    drv1.quit();*/
+		 
+		//Question number 3:
+		
+		/* WebDriver drv1 =new ChromeDriver();
+		 drv1.get("https://www.wikipedia.org/");
+		 drv1.manage().window().maximize();
+		 Thread.sleep(10000);
+		 drv1.findElement(By.xpath("//input[@id='searchInput']")).sendKeys("Artificial Intelligence");
+		 Thread.sleep(10000);
+		 drv1.findElement(By.xpath("//i[@class='sprite svg-search-icon']")).click();
+		 Thread.sleep(10000);
+		 drv1.findElement(By.xpath("//span[text()='View history']")).click();
+		 Thread.sleep(10000);
+		 String title2=drv1.getTitle();
+		 System.out.println("The Title of the currentsite is:" +title2);
+		 drv1.quit(); */
+	}
+
+}
