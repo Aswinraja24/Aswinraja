@@ -1,0 +1,17 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class webDRV {
+	public static void main(String[] args) {
+		
+	
+		
+	 WebDriver drv1 =new ChromeDriver();
+	 drv1.get("https://www.spicejet.com/");
+	 drv1.manage().window().maximize();
+	 drv1.quit();
+	 System.out.println("browser launched successfully");
+
+}
+}
