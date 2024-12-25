@@ -1,0 +1,74 @@
+package org.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebElements {
+	public static void main(String[] args) {
+		WebDriver drv1 =new ChromeDriver();
+		 drv1.get("https://parabank.parasoft.com/parabank/register.htm");
+		 drv1.manage().window().maximize();
+		// drv1.quit();
+		// System.out.println("browser launched successfully");
+		WebElement registration = drv1.findElement(By.xpath("//input[@id='customer.ssn']"));
+		registration.sendKeys("456");
+		WebElement registration1 =drv1.findElement(By.xpath("//input[@id='customer.address.city']"));
+		 registration1.sendKeys("vellore");
+		 WebElement registration2 = drv1.findElement(By.xpath("//input[@id='customer.phoneNumber']"));
+		 registration2.sendKeys("9003398");
+		 
+		 drv1.quit();
+		 System.out.println("browser launched successfully");
+		 
+
+		
+	}
+
+}
+===========================================================================================================================
+package org.test;
+import static org.junit.Assert.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+
+import org.junit.Test;
+
+public class juniT {
+
+	@BeforeClass  // Launch the Browser
+	public static void BeforeClass() {
+		System.out.println("Before Class");
+	}
+	@AfterClass   // Quit the Browser
+	public static void AfterClass() {
+		System.out.println("After Class");
+	}
+	@Test
+	public void test2() {
+		System.out.println("Hello2");
+	}
+	@Ignore
+	@Test
+	public void test3() {
+		System.out.println("Hello3");
+	}
+	@Test
+	public void test1() {
+		System.out.println("Hello1");
+	}
+	@Before    // Take Screenshot
+	public void Before() {
+		System.out.println("Before each @test");
+	} 
+	@After     // Take Screenshot
+	public void After() {
+		System.out.println("After each @test");
+	}
+
+}
