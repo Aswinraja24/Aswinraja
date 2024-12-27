@@ -1,0 +1,199 @@
+package MultipleDropDown;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testAA {
+	public static void main(String[] args) {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+		
+		// To launch the URL
+		driver.get("https://demoqa.com/select-menu");
+		
+		// Locate the Drop Down Button
+		WebElement dnd = driver.findElement(By.xpath("//select[@id='cars']"));
+		
+		// SELECT CLass
+		// Select ref = new Select (Webelement Ref);
+		Select select = new Select(dnd);
+		
+		// Check the Drop Down is Multiple
+		boolean multiple = select.isMultiple();
+		
+		List<WebElement> allOptions = select.getOptions();
+		
+		if(multiple==true) {
+		    for (WebElement eachOption : allOptions) {
+			  String data = eachOption.getText();
+			  select.selectByVisibleText(data);
+		   }
+		} else {
+			select.selectByIndex(1);
+		}
+		
+		// Deselect a option in the Drop down
+		select.deselectByIndex(1);
+		//select.deselectAll();
+		
+		// Getting the Selected Options in the Drop Down
+		List<WebElement> allSelectedOptions = select.getAllSelectedOptions();
+		for (WebElement webElement : allSelectedOptions) {
+			String text = webElement.getText();
+			System.out.println(text);
+		}
+		
+		// Getting the first selected Option in the Drop Down
+		WebElement option = select.getFirstSelectedOption();
+		System.out.println("1st Selected Option - "+option.getText());
+		
+	}
+
+}
+==============================================================================================================
+package RadiobuttonAndCheckBox;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class testAAA {
+	public static void main(String[] args) throws InterruptedException {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+						
+		// To launch the URL
+		driver.get("https://demoqa.com/radio-button");
+		Thread.sleep(5000);
+		// Locate the Radio Button
+		WebElement radioButton = driver.findElement(By.xpath("//label[text()='Impressive']"));
+		
+		// Click the Radio Button
+		radioButton.click();
+		
+		Thread.sleep(5000);
+		
+		// Checking the Radio Button is Selected or Not
+		boolean radioCheck = radioButton.isSelected();
+		if(radioCheck==true) {
+		System.out.println("Radio Button is Selected");
+		} else {
+			System.out.println("Radio Button is Not Selected");
+		}
+		
+		// Click the Check Box Menu
+		WebElement checkMenu = driver.findElement(By.xpath("//span[text()='Check Box']"));
+		checkMenu.click();
+		
+		driver.quit();
+		
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver1 = new ChromeDriver();
+						
+		// Maximize the Window
+		driver1.manage().window().maximize();
+		
+		// To launch the URL
+		driver1.get("https://artoftesting.com/samplesiteforselenium");
+		Thread.sleep(5000);
+		
+		// Locate the Check BOX
+		WebElement checkBox = driver1.findElement(By.xpath("//input[@value='Automation']"));
+		
+		// Checking the Check Box is Selected or Not
+		boolean checkBoxV = checkBox.isSelected();
+		
+		// If the Check Box Not Selected, Click the Check Box
+		if(checkBoxV==false) {
+			checkBox.click();
+		}
+		
+		// Printing Whether the button is selected
+		if(checkBoxV==true) {
+		System.out.println("Check BOX is Selected");
+		} else {
+			System.out.println("Check BOX is Not Selected");
+		}
+		
+		driver.quit();
+	}
+
+}
+====================================================================================================================
+package DropDown;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+public class testA {
+	public static void main(String[] args) throws InterruptedException {
+		  WebDriverManager.chromedriver().setup();
+			
+			// Created a Driver instance to access the browser
+			WebDriver driver = new ChromeDriver();
+							
+			// Maximize the Window
+			driver.manage().window().maximize();
+							
+			// To launch the URL
+			driver.get("https://demo.guru99.com/test/drag_drop.html");
+			
+			// Create the Object for the Actions Class
+			Actions act = new Actions(driver);
+			
+			// Webelement of drag 1
+			WebElement dragref1 = driver.findElement(By.xpath("//*[@id=\"credit2\"]/a"));
+				
+			// Webelement of Drop 1
+			WebElement dropref1 = driver.findElement(By.xpath("//*[@id=\"bank\"]/li"));
+			
+			// Webelement of drag 2
+			WebElement dragref2 = driver.findElement(By.xpath("(//*[@id=\"fourth\"]/a)[1]"));
+			
+			// Webelement of Drop 2
+			WebElement dropref2 = driver.findElement(By.xpath("//*[@id=\"amt7\"]/li"));
+			
+			// DRAG and DROP 1
+			act.dragAndDrop(dragref1,dropref1).perform();
+			
+			Thread.sleep(5000);
+			
+			// DRAG and DROP 2
+			act.dragAndDrop(dragref2,dropref2).perform();
+			
+		
+	}
+	
+
+}
