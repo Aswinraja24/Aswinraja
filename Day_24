@@ -1,0 +1,157 @@
+package Actions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testA {
+	public static void main(String[] args) throws InterruptedException {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+						
+		// To launch the URL
+		driver.get("https://www.spicejet.com/");
+		
+		// Create the Object for the Actions Class
+		Actions act = new Actions(driver);
+		
+		// Get the webelement ref to do mouse over
+		WebElement ref = driver.findElement(By.xpath("(//div[@class='css-76zvg2 r-jwli3a r-ubezar r-16dba41 r-1pzd9i8'])[2]"));
+		
+		// Method to do Mouse Over
+		act.moveToElement(ref).perform();
+		
+		// //tagname[text()='textvalue']
+		WebElement ref1 = driver.findElement(By.xpath("(//div[text()='SpiceMax'])[1]"));
+		act.doubleClick(ref1).perform();
+		// ref1.click(); //Left Click
+		
+		Thread.sleep(10000);
+		
+		// Get the Current URL
+		String url = driver.getCurrentUrl();
+		System.out.println("Current URL - "+ url);
+		
+		WebElement ref2 = driver.findElement(By.xpath("//div[text()='Hotels']"));
+		
+		// Context Click ---> Right Click
+		act.contextClick(ref2).perform();
+		
+		
+	}
+
+}
+
+===================================================================================================================================================
+package DragAndDrop;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testAAA {
+	public static void main(String[] args) throws InterruptedException {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+						
+		// To launch the URL
+		driver.get("https://demo.guru99.com/test/drag_drop.html");
+		
+		// Create the Object for the Actions Class
+		Actions act = new Actions(driver);
+		
+		// Webelement of drag 1
+		WebElement dragref1 = driver.findElement(By.xpath("//*[@id=\"credit2\"]/a"));
+			
+		// Webelement of Drop 1
+		WebElement dropref1 = driver.findElement(By.xpath("//*[@id=\"bank\"]/li"));
+		
+		// Webelement of drag 2
+		WebElement dragref2 = driver.findElement(By.xpath("(//*[@id=\"fourth\"]/a)[1]"));
+		
+		// Webelement of Drop 2
+		WebElement dropref2 = driver.findElement(By.xpath("//*[@id=\"amt7\"]/li"));
+		
+		// DRAG and DROP 1
+		act.dragAndDrop(dragref1,dropref1).perform();
+		
+		Thread.sleep(5000);
+		
+		// DRAG and DROP 2
+		act.dragAndDrop(dragref2,dropref2).perform();
+		
+	}
+
+}
+===========================================================================================================================================
+package methods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testAA {
+	public static void main(String[] args) throws InterruptedException {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+						
+		// To launch the URL
+		driver.get("https://www.facebook.com/");
+		
+		// Get the Current URL
+		String url = driver.getCurrentUrl();
+		System.out.println("Current URL - "+ url);
+		
+		// Get the Title of the page
+		String title = driver.getTitle();
+		System.out.println("The Title - "+ title);
+		
+		// Get the Text from the Web Application
+		WebElement ref = driver.findElement(By.xpath("//h2[@class='_8eso']"));
+		String text = ref.getText();
+		System.out.println("Get Text Method value - " + text);
+		
+		// Get the Value which is entering
+		WebElement ref1 = driver.findElement(By.xpath("//input[@name='email']"));
+		ref1.sendKeys("abcd@gmail.com");
+		String attribute = ref1.getAttribute("value");
+		System.out.println("Attribute sent - "+ attribute);
+		
+		Thread.sleep(5000);
+		
+		// To QUIT the Browser
+		driver.quit();
+	}
+
+}
