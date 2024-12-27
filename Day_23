@@ -1,0 +1,139 @@
+package Authentication;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testAAA {
+	 // Syntax - http://username:password@yourwebsite.com
+		public static void main(String[] args) {
+			// launch the Chrome Browser
+		    WebDriverManager.chromedriver().setup();
+									
+			// Created a Driver instance to access the browser
+			WebDriver driver = new ChromeDriver();
+							
+			// Maximize the Window
+			driver.manage().window().maximize();
+							
+			// To launch the URL
+			driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+		}
+
+	
+
+}
+==============================================================================================================
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testA {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver =new ChromeDriver();
+		 driver.get("https://parabank.parasoft.com/parabank/register.htm");
+		 driver.manage().window().maximize();
+		//Locators
+			
+			// 1. By ID
+			WebElement byId = driver.findElement(By.id("customer.firstName"));
+			byId.sendKeys("RAM");
+			
+			Thread.sleep(1000);
+			
+			// 2. By Name
+			WebElement byName = driver.findElement(By.name("customer.lastName"));
+			byName.sendKeys("Kumar");
+			
+			Thread.sleep(1000);
+			
+			// 3. By Tag Name
+			WebElement byTag = driver.findElement(By.tagName("h1"));
+			String text = byTag.getText();
+			System.out.println(text);
+			
+			// 4. By Link Text 
+			WebElement byLink = driver.findElement(By.linkText("Register"));
+			String text2 = byLink.getText();
+			System.out.println(text2);
+			
+		    // 5. By Partial Link Text
+			WebElement byPartial = driver.findElement(By.partialLinkText("login info?"));
+			byPartial.click();
+			
+			// 6. By Class Name
+			WebElement byClass = driver.findElement(By.className("caption"));
+			String text3 = byClass.getText();
+			System.out.println(text3);
+			
+			// 7. By Xpath
+			// Relative XPATH - //tagname[@attributename='attributevalue']
+			WebElement xpath = driver.findElement(By.xpath("//input[@name='address.city']"));
+			xpath.sendKeys("CHENNAI");
+			
+			// Absolute Xpath
+			WebElement absolute = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[5]/td[2]/input"));
+			absolute.sendKeys("TAMILNADU");
+			
+			// 8. CSS Selector
+			WebElement cssID = driver.findElement(By.cssSelector("#firstName"));
+			cssID.sendKeys("Anand");
+			
+			
+				    
+			
+		
+	}
+
+}
+======================================================================================================================================================
+package Navigation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestAA {
+	public static void main(String[] args) {
+		// launch the Chrome Browser
+	    WebDriverManager.chromedriver().setup();
+								
+		// Created a Driver instance to access the browser
+		WebDriver driver = new ChromeDriver();
+						
+		// Maximize the Window
+		driver.manage().window().maximize();
+						
+		// To launch the URL
+		driver.navigate().to("https://www.facebook.com/");
+		
+		WebElement email = driver.findElement(By.xpath("//input[@id='email']"));
+	    email.sendKeys("CHENNAI@gmail.com");
+	    
+	    WebElement forgot = driver.findElement(By.linkText("Forgotten password?"));
+	    forgot.click();
+	    
+	    // Previous Page
+	    driver.navigate().back();
+	    
+	    // Goes Forward
+	    driver.navigate().forward();
+	    
+	    // Previous Page
+	    driver.navigate().back();
+	    
+	    // Refresh Page
+	    driver.navigate().refresh();
+	    
+	    
+	    
+	}
+
+}
