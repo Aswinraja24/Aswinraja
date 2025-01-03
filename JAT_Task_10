@@ -1,0 +1,56 @@
+package TaskNo_2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testAA {
+	public static void main(String[] args) {
+		WebDriver drv3 = new ChromeDriver();
+		drv3.get("https://jqueryui.com/datepicker/");
+		drv3.manage().window().maximize();
+		drv3.findElement(By.xpath("//iframe[@class='demo-frame']"));
+		drv3.switchTo().frame(0);
+		WebElement datepicker = drv3.findElement(By.xpath("//input[@id='datepicker']"));
+		datepicker.click();
+		drv3.findElement(By.xpath("//span[text()='Next']")).click();
+		drv3.findElement(By.xpath("//a[text()='22']")).click();
+		String selectedDate = datepicker.getAttribute("value");
+		System.out.println("the selected date is " +selectedDate);
+	}
+
+}
+===============================================================================================================
+package TestNo_3;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class testAAA {
+	public static void main(String[] args) throws Exception {
+		WebDriver Drv2 = new ChromeDriver();
+		Drv2.manage().window().maximize();
+		Drv2.get("https://jqueryui.com/droppable/");
+		Actions act1 = new Actions(Drv2);
+		Drv2.findElements(By.xpath("//iframe[@class='demo-frame']"));
+		Drv2.switchTo().frame(0);
+		WebElement drag1 = Drv2.findElement(By.xpath("//p[text()='Drag me to my target']"));
+		WebElement drop1 = Drv2.findElement(By.xpath("//div[@id='droppable']"));
+		Thread.sleep(7000);
+		act1.dragAndDrop(drag1,drop1).perform();
+		
+		
+		
+	
+	
+		
+	}
+
+}
+==============================================================================================================
