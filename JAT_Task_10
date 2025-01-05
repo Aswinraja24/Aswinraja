@@ -1,0 +1,95 @@
+package TaskNo_1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class testA {
+	public static void main(String[] args) {
+		WebDriver Drv1 = new ChromeDriver();
+		Drv1.manage().window().maximize();
+	    Drv1.get("https://www.guvi.in/");
+	    Drv1.findElement(By.xpath("//a[text()='Sign up']")).click();
+	    Drv1.findElement(By.xpath("//input[@id='name']")).sendKeys("aswinsiva");
+	    Drv1.findElement(By.xpath("//input[@id='email']")).sendKeys("i8ec064@sairamtap.edu.in");
+	    Drv1.findElement(By.xpath("//input[@id='password']")).sendKeys("Aswin@24");
+	    Drv1.findElement(By.xpath("//input[@id='mobileNumber']")).sendKeys("9003339868");
+	    Drv1.findElement(By.xpath("//a[@id='signup-btn']")).click();
+	   /* WebElement DP = Drv1.findElement(By.xpath("//select[@id='profileDrpDwn']"));
+	    DP.click();
+	    Select sel = new Select(DP);
+	    sel.selectByIndex(0);
+	    WebElement DP2 = Drv1.findElement(By.xpath("//select[@id='degreeDrpDwn']"));
+	    DP2.click();
+	    Select sel1 = new Select(DP2);
+	    sel.selectByIndex(0);
+	    Drv1.findElement(By.xpath("//input[@id='year']")).sendKeys("2022");
+	    Drv1.findElement(By.xpath("//a[@id='details-btn']")).click();
+	    Drv1.findElement(By.xpath("//a[@id='laterBtn']")).click();*/
+	    Drv1.findElement(By.xpath("//a[@id='login-btn']")).click();
+	    Drv1.findElement(By.xpath("//input[@id='email']")).sendKeys("aswinsiva2k@gmail.com");
+	    Drv1.findElement(By.xpath("//input[@id='password']")).sendKeys("Aswinsiva@24");
+	    Drv1.findElement(By.xpath("//input[@id='login-btn']")).click();
+}
+}
+=====================================================================================================================
+package TaskNo_2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testAA {
+	public static void main(String[] args) {
+		WebDriver drv3 = new ChromeDriver();
+		drv3.get("https://jqueryui.com/datepicker/");
+		drv3.manage().window().maximize();
+		drv3.findElement(By.xpath("//iframe[@class='demo-frame']"));
+		drv3.switchTo().frame(0);
+		WebElement datepicker = drv3.findElement(By.xpath("//input[@id='datepicker']"));
+		datepicker.click();
+		drv3.findElement(By.xpath("//span[text()='Next']")).click();
+		drv3.findElement(By.xpath("//a[text()='22']")).click();
+		String selectedDate = datepicker.getAttribute("value");
+		System.out.println("the selected date is " +selectedDate);
+	}
+
+}
+===============================================================================================================================
+package TestNo_3;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class testAAA {
+	public static void main(String[] args) throws Exception {
+		WebDriver Drv2 = new ChromeDriver();
+		Drv2.manage().window().maximize();
+		Drv2.get("https://jqueryui.com/droppable/");
+		Actions act1 = new Actions(Drv2);
+		Drv2.findElements(By.xpath("//iframe[@class='demo-frame']"));
+		Drv2.switchTo().frame(0);
+		WebElement drag1 = Drv2.findElement(By.xpath("//p[text()='Drag me to my target']"));
+		WebElement drop1 = Drv2.findElement(By.xpath("//div[@id='droppable']"));
+		Thread.sleep(7000);
+		act1.dragAndDrop(drag1,drop1).perform();
+		
+		
+		
+	
+	
+		
+	}
+
+}
+
+
+
