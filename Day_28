@@ -1,0 +1,136 @@
+
+package org.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass {
+	static WebDriver driver;
+	
+	public static void browserConfigChrome() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
+	
+	public static void openURL(String url) {
+		driver.get(url);
+	}
+	
+	public static void maximizeWindow() {
+		driver.manage().window().maximize();
+	}
+	
+	public static WebElement locateByXpath (String xpath) {
+		WebElement findElement = driver.findElement(By.xpath(xpath));
+		return findElement;	
+	}
+	
+	public static WebElement locateByID (String id) {
+		WebElement findElement = driver.findElement(By.id(id));
+		return findElement;	
+	}
+	
+	public static void textInput (WebElement element, String value) {
+		element.sendKeys(value);
+	}
+	
+	public static void click (WebElement element) {
+		element.click();
+	}
+	
+	public static void refresh () {
+		driver.navigate().refresh();
+	}
+	
+	
+
+}
+====================================================================================================
+
+package org.test;
+
+public class Facebook extends BaseClass {
+	public static void main(String[] args) {
+		browserConfigChrome();
+		openURL("https://www.facebook.com/");
+		maximizeWindow();
+		Login l = new Login ();
+		textInput (l.getEmail(), "xyz@gmail.com");
+		refresh();
+		textInput (l.getEmail(), "abcd@gmail.com");
+		textInput (l.getPass(), "12345678");
+		click(l.getLoginBtn());
+		
+		System.out.println("Program Ran Successfully");
+	}
+
+}
+==========================================================================================================
+
+package org.test;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
+
+public class Login extends BaseClass{
+	 public Login(){
+		PageFactory.initElements(driver,this);
+	 }
+	 
+	 @FindBys({  //  AND Operator - Both conditions need to correct
+		 @FindBy(id="email"),  // Correct
+		 @FindBy(xpath = "//input[@type='text']")	// Correct
+	 })
+	 private WebElement email; 
+	 /*
+	 @FindBy(xpath = "//input[@type='text']")
+	 private WebElement email;
+	 */
+	 @FindAll({  // OR Operator - Any One Condition Need to be correct
+		 @FindBy(id="pass"),            // Correct
+		 @FindBy(id="password")         // Incorrect
+	 })
+	 private WebElement pass;
+	/*
+	 @FindBy(id="pass")
+	 private WebElement pass;
+	 */
+	 @FindBy(xpath="//button[@name='login']")
+	 private WebElement loginBtn;
+	 
+	 public WebElement getEmail() {
+			return email;
+		}
+		public WebElement getPass() {
+			return pass;
+		}
+		public WebElement getLoginBtn() {
+			return loginBtn;
+		}
+	 
+
+}
+========================================================================================================
+
+package org.test;
+
+import org.openqa.selenium.WebElement;
+
+public class Sample extends BaseClass {
+	public static void main(String[] args) {
+		browserConfigChrome();
+		openURL("https://www.facebook.com/");
+		maximizeWindow();
+		WebElement search = locateByXpath("//input[@type='text']");
+		textInput(search, "xyz@gmail.com");	
+		WebElement button = locateByXpath("//button[@name='login']");
+		click(button);	
+	}
+
+}
