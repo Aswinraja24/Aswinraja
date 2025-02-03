@@ -1,0 +1,93 @@
+package task01;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class JAT11_01 {
+	public static void main(String[] args) throws Exception {
+	WebDriver drv1 =  new ChromeDriver();
+	drv1.manage().window().maximize();
+	drv1.get("https://the-internet.herokuapp.com/windows");
+	Thread.sleep(3000);
+	drv1.findElement(By.xpath("//a[text()='Click Here']")).click();
+	Thread.sleep(3000);
+	/*String currentwindow = drv1.getWindowHandle();
+	System.out.println("the current window id is "+ currentwindow);*/
+	Set<String> allWindows = drv1.getWindowHandles();
+	List<String> list = new ArrayList <String>();
+	list.addAll(allWindows);
+	String previouswindow = list.get(0);
+	drv1.switchTo().window(previouswindow);
+	Thread.sleep(3000);
+	String current1window = list.get(1);
+	drv1.switchTo().window(current1window);
+	Thread.sleep(3000);
+	drv1.close();
+	Thread.sleep(3000);
+	drv1.quit();
+	
+	
+	
+	
+	}
+	
+
+}
+======================================================================================================
+
+package Task02;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class frames {
+	public static void main(String[] args) {
+		WebDriver drv1 = new ChromeDriver();
+		drv1.get("http://the-internet.herokuapp.com/nested_frames");
+		drv1.manage().window().maximize();
+		WebElement TopFrame = drv1.findElement(By.xpath("//frame[@name='frame-top']"));
+		drv1.switchTo().frame("frame-top");
+		List<WebElement> topframecount =	drv1.findElements(By.tagName("frame"));
+		int total_topframes = topframecount.size();
+		System.out.println("the number of frames in the top:" +total_topframes);
+		//WebElement LeftFrame = drv1.findElement(By.name("frame-left"));
+		drv1.switchTo().frame("frame-left");
+		String leftname = drv1.findElement(By.tagName("body")).getText();
+		System.out.println("The Left Frame name is :"+leftname);
+		drv1.switchTo().parentFrame();
+		//WebElement MiddleFrame = drv1.findElement(By.name("frame-middle"));
+	    drv1.switchTo().frame("frame-middle");
+		String middlename = drv1.findElement(By.tagName("body")).getText();
+		System.out.println("The Middle Frame name is :"+middlename);
+		drv1.switchTo().parentFrame();
+		//WebElement RightFrame = drv1.findElement(By.name("frame-right"));
+		drv1.switchTo().frame("frame-right");
+		String rightname = drv1.findElement(By.tagName("body")).getText();
+		System.out.println("The Right Frame name is :"+rightname);
+		drv1.switchTo().defaultContent();
+		//WebElement BottomFrame = drv1.findElement(By.name("frame-bottom"));
+		drv1.switchTo().frame("frame-bottom");
+		String bottomname = drv1.findElement(By.tagName("body")).getText();
+		System.out.println("the Bottom frame name is :"+bottomname);
+		drv1.switchTo().defaultContent();
+		String pageTitle= drv1.getTitle();
+		if (pageTitle.contains("Frames")) {
+	    System.out.println("Page Title is frames");
+		}else {
+			System.out.println("There is no Page Title");
+		}
+		
+	}
+
+
+	
+}
