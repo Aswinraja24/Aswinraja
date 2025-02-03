@@ -1,0 +1,38 @@
+package task01;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+	public class jdbc02 {
+		public static void main(String[] args) throws Exception {
+			String db = "jdbc:mysql://localhost:3306";
+			String user = "root";
+			String password = "root";
+			
+	    	Connection connection = DriverManager.getConnection(db,user,password);
+			if(connection != null) {
+				System.out.println("connection done");
+			}else {
+				System.out.println("connection failed");
+		    }
+			Statement statement2 = connection.createStatement();
+			String useDB = "use JAT_12";
+			//String createTable = "create table emp5(empcode int,empname varchar(10),empage int,esalary int)";
+			//String insert ="insert into emp5 values(101,'JENY',25,100000),(102,'JACKY',30,200000),(103,'JOE',20,400000),(104,'JOHN',40,800000),(105,'SHAMEER',25,900000)"; 
+			String select1= "select* from emp5";
+			statement2.execute(useDB);
+			//statement2.execute(createTable);
+			//statement2.execute(insert);
+			statement2.execute(select1);
+			ResultSet rs1 = statement2.executeQuery(select1);
+			while (rs1.next()) {
+				System.out.println(rs1.getInt("empcode")+ " " + rs1.getString("empname")+ " " +rs1.getInt("empage")+ " "+rs1.getInt("esalary"));	
+			}
+		}
+
+	}
+
+
+
