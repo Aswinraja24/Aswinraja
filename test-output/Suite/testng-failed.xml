@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Testsignup(failed)">
+    <classes>
+      <class name="miniproject_01.signingupTest">
+        <methods>
+          <include name="signup"/>
+          <include name="closingbrowser"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- miniproject_01.signingupTest -->
+    </classes>
+  </test> <!-- Testsignup(failed) -->
+</suite> <!-- Failed suite [Suite] -->
